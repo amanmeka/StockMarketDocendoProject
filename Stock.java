@@ -25,6 +25,25 @@ public class Stock {
     stockPrice += ((volatility * firstOrderForecast));
   }
 
+  public double getFunction() {
+    if (stockPrice - 10 >= secondOrderForecast) {
+      return stockPrice += volatility*firstOrderForecast - 4.0;
+    } else if (stockPrice - 5 >= secondOrderForecast) {
+      return stockPrice += volatility*firstOrderForecast - 2.0;
+    } else if (stockPrice > secondOrderForecast) {
+      return stockPrice += volatility*firstOrderForecast - 1.0;
+    } else if (stockPrice == secondOrderForecast) {
+      return stockPrice += volatility*firstOrderForecast;
+    } else if (stockPrice < secondOrderForecast) {
+      return stockPrice += volatility*firstOrderForecast + 1.0;
+    } else if (stockPrice + 5 <= secondOrderForecast) {
+      return stockPrice += volatility*firstOrderForecast + 2.0;
+    } else if (stockPrice + 10 <= secondOrderForecast) {
+      return stockPrice += volatility*firstOrderForecast + 4.0;
+    }
+    return stockPrice += volatility*firstOrderForecast;
+  }
+
   public String getStockName() {
     return stockName;
   }
