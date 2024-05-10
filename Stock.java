@@ -9,13 +9,13 @@ public class Stock {
     volatility = (Math.random() * 1) + 10;
     secondOrderForecast = (Math.random() * 100) + 1;
     stockPrice = (Math.random() * 100) + 1;
-    firstOrderForecast = (Math.random()*20)-10;
+    firstOrderForecast = (Math.random()*5); 
   }
 
-  public double newDay() {
-    double change = Math.random() - 0.5;
-    firstOrderForecast += change;
-    return stockPrice - (stockPrice - secondOrderForecast) * (volatility * firstOrderForecast);
+  public void newDay() {
+    double change = (Math.random() * 5) - 2.5;
+    firstOrderForecast = firstOrderForecast + change;
+    stockPrice += ((volatility * firstOrderForecast));
   }
 
   public double getVolatility() {
