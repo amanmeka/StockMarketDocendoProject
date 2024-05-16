@@ -15,5 +15,12 @@ public class Trader {
 		appleShares = 0;
 	}
 
-	
+	public void invest() {
+
+	}
+
+	public void sell() {
+		
+	}
+
  }
