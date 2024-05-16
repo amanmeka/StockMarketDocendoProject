@@ -7,6 +7,8 @@ public class Main {
         for(int i = 0; i < 20; i++) {
             System.out.println(stock.getStockPrice());
             System.out.println("firstOrder: " + stock.getFirstOrderForecast());
+            System.out.println("secondOrder: " + stock.getSecondOrderForecast());
+            System.out.println("funtion: " + stock.getFunction()/2);
             stock.newDay();
         }
     }

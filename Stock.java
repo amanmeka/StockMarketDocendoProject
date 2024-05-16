@@ -10,7 +10,7 @@ public class Stock {
 
   public Stock(String stockName) {
     this.stockName = stockName;
-    volatility = (Math.random() * 1) + 10;
+    volatility = (Math.random() * 1) + 5;
     secondOrderForecast = (Math.random() * 100) + 1;
     stockPrice = (Math.random() * 100) + 1;
     firstOrderForecast = (Math.random()*5); 
@@ -26,8 +26,7 @@ public class Stock {
     double secondChange = (Math.random() - 0.5) / 5;
     secondOrderForecast += secondChange;
 
-    stockPrice += getFunction();
-
+    stockPrice += (getFunction()/2);
 
   }
 
