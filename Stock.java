@@ -4,13 +4,13 @@ public class Stock {
   private double volatility;
   private double firstOrderForecast;
   private double secondOrderForecast;
-  private double stockPrice;
-  private int totalShares;
-  private double totalStockValue;
+  public double stockPrice;
+  public int totalShares;
+  public double totalStockValue;
 
   public Stock(String stockName) {
     this.stockName = stockName;
-    volatility = (Math.random() * 1) + 2.5;
+    volatility = Math.random() * 2.5;
     secondOrderForecast = (Math.random() * 100) + 1;
     stockPrice = (Math.random() * 100) + 1;
     firstOrderForecast = (Math.random()*5); 
@@ -76,5 +76,7 @@ public class Stock {
   public double getTotalStockValue() {
     return totalStockValue;
   }
+
+  
 }
   
