@@ -20,28 +20,34 @@ public class Stock {
   }
 
   public void newDay() {
-    double change = (Math.random() * 5) - 2.5;
-    firstOrderForecast = firstOrderForecast + change;
-    stockPrice += ((volatility * firstOrderForecast));
+    double firstChange = (Math.random() * 5) - 2.5;
+    firstOrderForecast = firstOrderForecast + firstChange;
+
+    double secondChange = (Math.random() - 0.5) / 5;
+    secondOrderForecast += secondChange;
+
+    stockPrice += getFunction();
+
+
   }
 
   public double getFunction() {
     if (stockPrice - 10 >= secondOrderForecast) {
-      return stockPrice += volatility*firstOrderForecast - 4.0;
+      return volatility*firstOrderForecast - 4.0;
     } else if (stockPrice - 5 >= secondOrderForecast) {
-      return stockPrice += volatility*firstOrderForecast - 2.0;
+      return volatility*firstOrderForecast - 2.0;
     } else if (stockPrice > secondOrderForecast) {
-      return stockPrice += volatility*firstOrderForecast - 1.0;
+      return volatility*firstOrderForecast - 1.0;
     } else if (stockPrice == secondOrderForecast) {
-      return stockPrice += volatility*firstOrderForecast;
+      return volatility*firstOrderForecast;
     } else if (stockPrice < secondOrderForecast) {
-      return stockPrice += volatility*firstOrderForecast + 1.0;
+      return volatility*firstOrderForecast + 1.0;
     } else if (stockPrice + 5 <= secondOrderForecast) {
-      return stockPrice += volatility*firstOrderForecast + 2.0;
+      return volatility*firstOrderForecast + 2.0;
     } else if (stockPrice + 10 <= secondOrderForecast) {
-      return stockPrice += volatility*firstOrderForecast + 4.0;
+      return volatility*firstOrderForecast + 4.0;
     }
-    return stockPrice += volatility*firstOrderForecast;
+    return volatility*firstOrderForecast;
   }
 
   public String getStockName() {

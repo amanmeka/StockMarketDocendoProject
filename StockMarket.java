@@ -1,22 +1,22 @@
 public class StockMarket {
 
-	private Stock[] stockMarket;
+	private Stock[] stocks;
 
 	public StockMarket(Stock[] stocks) {
-		stockMarket = stocks;
+		this.stocks = stocks;
 	}
 
 	public Stock[] getStockMarket() {
-		return stockMarket;
+		return stocks;
 	}
 
 	public void setStockMarket(Stock[] setStockMarket) {
-		stockMarket = setStockMarket;
+		stocks = setStockMarket;
 	}
 
 	public void simulateStockMarketDay() {
-		for (int i = 0; i < stockMarket.length; i++) {
-			stockMarket[i].newDay();
+		for (int i = 0; i < stocks.length; i++) {
+			stocks[i].newDay();
 		}
 	}
 }
