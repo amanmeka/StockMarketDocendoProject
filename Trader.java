@@ -2,7 +2,6 @@ public class Trader {
 
 	private String name;
 	private double balance;
-	private double netWorth;
 	private int nvidiaShares, amdShares, amazonShares, teslaShares, appleShares;
 
 	public Trader(String name) {
@@ -15,12 +14,60 @@ public class Trader {
 		appleShares = 0;
 	}
 
-	public void invest() {
-
+	public void invest(Stock investStock, int amountShares) {
+		if (investStock.getStockName().equals("NVIDIA")) {
+			nvidiaShares += amountShares;
+			balance -= investStock.stockPrice * amountShares;
+			investStock.totalShares -= amountShares;
+		}
+		else if (investStock.getStockName().equals("AMD")) {
+			nvidiaShares += amountShares;
+			balance -= investStock.stockPrice * amountShares;
+			investStock.totalShares -= amountShares;
+		}
+		else if (investStock.getStockName().equals("Amazon")) {
+			amdShares += amountShares;
+			balance -= investStock.stockPrice * amountShares;
+			investStock.totalShares -= amountShares;
+		}
+		else if (investStock.getStockName().equals("Tesla")) {
+			teslaShares += amountShares;
+			balance -= investStock.stockPrice * amountShares;
+			investStock.totalShares -= amountShares;
+		}
+		else if (investStock.getStockName().equals("Apple")) {
+			appleShares += amountShares;
+			balance -= investStock.stockPrice * amountShares;
+			investStock.totalShares -= amountShares;
+		}
 	}
 
-	public void sell() {
-		
+	public void sell(Stock investStock, int amountShares) {
+		if (investStock.getStockName().equals("NVIDIA")) {
+			nvidiaShares -= amountShares;
+			balance += investStock.stockPrice * amountShares;
+			investStock.totalShares += amountShares;
+		}
+		else if (investStock.getStockName().equals("AMD")) {
+			nvidiaShares -= amountShares;
+			balance += investStock.stockPrice * amountShares;
+			investStock.totalShares += amountShares;
+		}
+		else if (investStock.getStockName().equals("Amazon")) {
+			amdShares -= amountShares;
+			balance += investStock.stockPrice * amountShares;
+			investStock.totalShares += amountShares;
+		}
+		else if (investStock.getStockName().equals("Tesla")) {
+			teslaShares -= amountShares;
+			balance += investStock.stockPrice * amountShares;
+			investStock.totalShares += amountShares;
+		}
+		else if (investStock.getStockName().equals("Apple")) {
+			appleShares -= amountShares;
+			balance += investStock.stockPrice * amountShares;
+			investStock.totalShares += amountShares;
+		}
+	}
 	}
 
- }
