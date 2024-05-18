@@ -1,10 +1,7 @@
 public class Trader {
-
-	private String name;
 	private double balance;
 
-	public Trader(String name) {
-		this.name = name;
+	public Trader() {
 		balance = 10000.0;
 	}
 

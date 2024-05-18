@@ -12,7 +12,7 @@ public class StockMarket {
 		return stocks;
 	}
 
-	public static void setStockMarket(ArrayList<Stock> setStockMarket) {
+	public void setStockMarket(ArrayList<Stock> setStockMarket) {
 		stocks = setStockMarket;
 	}
 

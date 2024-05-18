@@ -77,5 +77,9 @@ public class Stock {
   public double getSharesInCompany() {
     return sharesInCompany;
   }
+
+  public String toString() {
+    return stockName + ", stock price: " + stockPrice + ", shares in stock: " + sharesInCompany;
+  }
 }
   
