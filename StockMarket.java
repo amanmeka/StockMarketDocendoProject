@@ -1,22 +1,24 @@
+import java.util.*;
+
 public class StockMarket {
 
-	private Stock[] stocks;
+	private static ArrayList<Stock> stocks;
 
-	public StockMarket(Stock[] stocks) {
+	public StockMarket(ArrayList<Stock> stocks) {
 		this.stocks = stocks;
 	}
 
-	public Stock[] getStockMarket() {
+	public static ArrayList<Stock> getStockMarket() {
 		return stocks;
 	}
 
-	public void setStockMarket(Stock[] setStockMarket) {
+	public static void setStockMarket(ArrayList<Stock> setStockMarket) {
 		stocks = setStockMarket;
 	}
 
-	public void simulateStockMarketDay() {
-		for (int i = 0; i < stocks.length; i++) {
-			stocks[i].newDay();
+	public static void simulateStockMarketDay() {
+		for (int i = 0; i < stocks.size(); i++) {
+			stocks.get(i).newDay();
 		}
 	}
 }

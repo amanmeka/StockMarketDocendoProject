@@ -4,19 +4,16 @@ public class Stock {
   private double volatility;
   private double firstOrderForecast;
   private double secondOrderForecast;
-  public double stockPrice;
-  public int totalShares;
-  public double totalStockValue;
+  private double stockPrice;
+  private double sharesInCompany;
 
   public Stock(String stockName) {
     this.stockName = stockName;
     volatility = Math.random() * 2.5;
     secondOrderForecast = (Math.random() * 100) + 1;
     stockPrice = (Math.random() * 100) + 1;
-    firstOrderForecast = (Math.random()*5); 
-    totalShares = 1000;
-    totalStockValue = 1000 * stockPrice;
-
+    firstOrderForecast = (Math.random()*5);
+    sharesInCompany = 0.0;
   }
 
   public void newDay() {
@@ -49,6 +46,14 @@ public class Stock {
     return volatility*firstOrderForecast;
   }
 
+  public void addShares(int add) {
+    sharesInCompany += add;
+  }
+
+  public void sellShares(int delete){
+    sharesInCompany -= delete;
+  }
+
   public String getStockName() {
     return stockName;
   }
@@ -68,15 +73,9 @@ public class Stock {
   public double getStockPrice() {
     return stockPrice;
   }
-  
-  public int getTotalShares() {
-    return totalShares;
-  }
 
-  public double getTotalStockValue() {
-    return totalStockValue;
+  public double getSharesInCompany() {
+    return sharesInCompany;
   }
-
-  
 }
   
