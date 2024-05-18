@@ -1,0 +1,22 @@
+public class TraderTemplate {
+    
+    //Add initiialization variables - share types, name of trader, balance, and invested stocks
+
+
+
+    //Initialization constructor - initialize all the variables, balances to 10000 and stocks to 0
+
+    public TraderTemplate() {
+        
+    }
+
+    //
+    //Update stock shares, balance, and specific stock share number to sell an amount of a stock
+    public void sell() {
+
+    }
+
+    public void invest() {
+      //Update stock shares, balance, and specific stock share number to buy an amount of a stock
+    }
+}
