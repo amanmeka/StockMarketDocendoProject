@@ -16,18 +16,17 @@ public class Main {
         StockMarket stockMarket = new StockMarket(stocks);
         Trader trader = new Trader();
 
-        trader.invest("TSLA", 9);
-        trader.invest("GOOGL", 10);
-        trader.invest("NVIDIA", 6);
-        trader.invest("TSLA", 23);
+        boolean game = true;
 
-        System.out.println("Stock Shares Money: " + trader.getStockMarketMoney());
-        for(int i = 0; i < 20; i++) {
-        stockMarket.simulateStockMarketDay();
-        System.out.println("Stock Share Money: " + trader.getStockMarketMoney());
-        for(int j = 0; j < stockMarket.getStockMarket().size(); j++) {
-            stockMarket.getStockMarket().get(j);
-        }
+        System.out.println(" Welcome to the Ultimate Stock Trading Game:");
+        
+        while(game == true) {
+
+            for(int i = 0; i < stockMarket.getStockMarket().size(); i++) {
+                System.out.println(stockMarket.getStockMarket().get(i));
+            }
+            
+
         }
     }
 }

@@ -79,7 +79,7 @@ public class Stock {
   }
 
   public String toString() {
-    return stockName + ", stock price: " + stockPrice + ", shares in stock: " + sharesInCompany;
+    return stockName + " || Stock price: " + stockPrice + " || Shares in stock: " + sharesInCompany;
   }
 }
   
