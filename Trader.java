@@ -20,9 +20,14 @@ public class Trader {
         balance -= stock.getStockPrice() * amountShares;
 	}
 
-	public void sell(Stock investStock, int amountShares) {
-        int index = StockMarket.getStockMarket().indexOf(investStock);
-        Stock stock = StockMarket.getStockMarket().get(index);
+	public void sell(String ticker, int amountShares) {
+        int i = 0;
+        for(; i < StockMarket.getStockMarket().size(); i++) {
+            if(StockMarket.getStockMarket().get(i).getStockName().equals(ticker)) {
+                break;
+            }
+        }
+        Stock stock = StockMarket.getStockMarket().get(i);
 		stock.sellShares(amountShares);
         balance += stock.getStockPrice() * amountShares;
 	}
