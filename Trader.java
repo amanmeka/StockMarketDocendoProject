@@ -5,6 +5,16 @@ public class Trader {
 		balance = 10000.0;
 	}
 
+    public int getStockNumber(String ticker) {
+        int i = 0;
+        for(; i < StockMarket.getStockMarket().size(); i++) {
+            if(StockMarket.getStockMarket().get(i).getStockName().equals(ticker)) {
+                break;
+            }
+        }
+        return i;
+    }
+
 	public void invest(String ticker, int amountShares) {
         int i = 0;
         for(; i < StockMarket.getStockMarket().size(); i++) {
@@ -36,6 +46,10 @@ public class Trader {
             total += stock.getSharesInCompany() * stock.getStockPrice();
         }
         return total;
+    }
+
+    public double getBalance() {
+        return balance;
     }
 }
 
